@@ -13,11 +13,12 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
  */
 public class MessageSending extends ListenerAdapter  {
     
-    @Override
+   /** @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         if(!event.getAuthor().isBot()){
           String messageSent = event.getMessage().getContentRaw();
           event.getChannel().sendMessage("this was sent" + messageSent).queue();
         }
     }
+    *  */
 }

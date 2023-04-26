@@ -5,11 +5,8 @@
 package dc.bot.dcbot.commands;
 
 import net.dv8tion.jda.api.entities.Channel;
-import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.channel.ChannelCreateEvent;
 import net.dv8tion.jda.api.events.channel.ChannelDeleteEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 /**
@@ -18,7 +15,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
  */
 public class Help extends ListenerAdapter {
 
-    @Override
+  /**  @Override
     public void onMessageReactionAdd(MessageReactionAddEvent event) {
         User user = event.getUser();
         String emoji = event.getReaction().getEmoji().getAsReactionCode();
@@ -29,8 +26,8 @@ public class Help extends ListenerAdapter {
         event.getGuild().getDefaultChannel().asTextChannel().sendMessage(message).queue();
 
     }
-
-    @Override
+ */
+/**    @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         User user = event.getAuthor();
         
@@ -40,7 +37,7 @@ public class Help extends ListenerAdapter {
             event.getGuild().getDefaultChannel().asTextChannel().sendMessage(message).queue();
         }
     }
-
+*/
     @Override
     public void onChannelDelete(ChannelDeleteEvent event) {
         Channel channel = event.getChannel();
@@ -56,6 +53,7 @@ public class Help extends ListenerAdapter {
         
         String message = channel.getName() + " was created";
         event.getGuild().getDefaultChannel().asTextChannel().sendMessage(message).queue();
+       
         
     }
     
